@@ -21,7 +21,8 @@ O fluxo de trabalho será estruturado da seguinte forma:
 - 🟢 **ETAPA 1:** Listagem de todos os exercícios aprovados (`GET /exercicios-fisicos`) + Commit 1
 - 🟡 **ETAPA 2:** Consulta de exercício aprovado por ID (`GET /exercicios-fisicos/{id}`) + Commit 2
 - 🔵 **ETAPA 3:** Cadastro de novo exercício (`POST /exercicios-fisicos`) + Commit 3
-
+- 🟣 **ETAPA 4:**  Aprovação de Exercício
+- 
 Para isso, você construirá as seguintes peças da arquitetura:
 
 - **DTOs:** com `record` Java
