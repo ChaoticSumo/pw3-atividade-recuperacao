@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -25,5 +26,16 @@ public class ExercicioFisicoService {
         return exercicios.stream()
                 .map(mapper::toExercicoFisicoResponseDTO)
                 .collect(Collectors.toList());
+    }
+
+    public ExercicoFisicoResponseDTO buscarPorId(Long id){
+        Optional<ExercicioFisico> exercicio = repository.findByIdAndAprovadoTrue(id);
+
+        if(exercicio.isEmpty())
+        {
+            return null;
+        }
+
+        return mapper.toExercicoFisicoResponseDTO(exercicio.get());
     }
 }
